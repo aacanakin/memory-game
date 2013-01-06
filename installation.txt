@@ -1,0 +1,46 @@
+Colour Memory - pre-installation and local deployment guide
+
+Colour Memory runs on Windows environment.
+
+Step 1 - Install XAMPP for Windows
+
+Download & install XAMPP for Windows on this link (http://www.apachefriends.org/en/xampp.html)
+
+Step 2 - Open XAMPP Control Panel
+
+After a successfull installation of XAMPP for Windows, you need to open XAMPP Control Panel and start Apache & MySql services.
+
+Step 3 - Open phpmyadmin and create a db schema namely "memory_game"
+
+After starting apache and mysql services, you need to open phpMyAdmin by navigating to http://localhost/phpmyadmin. After opening it, you need to create a database schema named "memory_game".
+
+Step 4 - Copy project files into /htdocs folder
+
+extract memory_game.zip into C:\xampp\htdocs. the file structure should look like this;
+
+C:\xampp\htdocs\memory_game
+C:\xampp\htdocs\memory_game\application
+C:\xampp\htdocs\memory_game\config
+
+etc..
+
+Step 5 - Adjust framework configuration
+
+open C:\xampp\htdocs\memory_game\config\db.php . Change database variables. It should look like this
+
+<?php
+// DATABASE VARIABLES 
+Config::set('db_host', 'localhost');
+Config::set('db_user', 'root');
+Config::set('db_pass', '---- your database password ----');
+Config::set('db_schema', 'memory_game');
+
+Step 6 - Make sure that /tmp directory is system wise writable
+
+Make sure that /memory_game/tmp directory and all the sub-directories and files are fully writable by system. File access mode should be 777.
+
+Step 7 - Play the game
+
+open your firefox browser, navigate to http://localhost/memory_game
+
+That's all :)
